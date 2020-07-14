@@ -124,7 +124,7 @@ const Header = () => {
                         <Avatar alt="profile image" src={`${state.profilePicUrl}`} />
                         <div style={{width: '10%', height: '100%', textAlign: 'center', margin: 'auto 10px'}}>{state.username}</div>
                         <Button variant="contained" className={classes.margin} onClick={() => {copyId()}} style={{ color: '#388e3c', backgroundColor: 'white'}}>ここをクリックして自分のIDをコピー</Button>
-                        <Button variant="contained" className={classes.margin} onClick={() => {copyFriendId()}} style={{ color: '#388e3c', backgroundColor: 'white'}}>ここをクリックしてIDコピー、お試しに友だちを追加</Button>
+                        <Button variant="contained" className={classes.margin} onClick={() => {copyFriendId()}} style={{ color: '#388e3c', backgroundColor: 'white'}}>ここをクリックしてIDをコピー、試しに友だちを追加</Button>
                         <div id='myId' style={{ width: '0', height: '0', margin: '0', padding: '0', opacity: '0'}}>{state.id}</div>
                         <div id='FriendId' style={{ width: '0', height: '0', margin: '0', padding: '0', opacity: '0'}}>Lp6SoOTPVcOwVfwB1sd0iu3yoTh1</div>
                     </Toolbar>
