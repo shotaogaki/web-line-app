@@ -660,7 +660,7 @@ export default function Main() {
                         <span className={classes.friendsTalkHeaderSpan}></span>
                         <Button className={classes.friendsTalkHeaderBtn} onClick={() => {toggleTalkView();setFrienddata({id: "", url: "", name: ""});}}><CloseIcon/></Button>
                     </Typography>
-                    <div className={classes.friendsTalkView} id='messages'>textarea</div>
+                    <div className={classes.friendsTalkView} id='messages'></div>
                     <Typography component='div' className={classes.friendsTalkText}>
                         <Button className={classes.friendsTalkTextBtn} onClick={() => {imgInputOnclick();}}>
                             <input type="file" id='imgInp' style={{display:'none'}} accept={'image/*'} onChange={(e)=>{uploadImg(e)}}/>

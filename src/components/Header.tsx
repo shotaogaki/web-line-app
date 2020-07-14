@@ -80,16 +80,26 @@ const Header = () => {
         document.execCommand('copy');
         selection.removeAllRanges();
     }
+    const copyFriendId = () => {
+        const FriendId = document.getElementById('FriendId')!;
+        const range = document.createRange();
+        range.selectNodeContents(FriendId);
+        const selection = window.getSelection()!;
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+    }
 
     const renderLoginComponent = (classes: Record<"color" | "flex" | "margin" | "button" | "root", string>) => {
         return (
             <AppBar position="static" color="inherit" className={classes.color}>
                 <Toolbar>
                     <Typography variant="subtitle1" color="inherit" className={classes.flex}>
-                        Chat App
+                        チャットアプリ
                     </Typography>
                     <Button color="inherit" className={classes.button} onClick={googleLogin}>
-                        Login with Google
+                        Googleでログイン
                     </Button>
                 </Toolbar>
             </AppBar>
@@ -102,10 +112,10 @@ const Header = () => {
                 <AppBar position="static" color="inherit">
                     <Toolbar>
                         <Typography variant="subtitle1" color="inherit" className={classes.flex}>
-                            Chat App
+                            チャットアプリ
                         </Typography>
                         <Button color="inherit" className={classes.button} onClick={googleSignOut}>
-                            Logout
+                            ログアウト
                         </Button>
                     </Toolbar>
                 </AppBar>
@@ -113,8 +123,10 @@ const Header = () => {
                     <Toolbar> 
                         <Avatar alt="profile image" src={`${state.profilePicUrl}`} />
                         <div style={{width: '10%', height: '100%', textAlign: 'center', margin: 'auto 10px'}}>{state.username}</div>
-                        <Button variant="contained" className={classes.margin} onClick={() => {copyId()}} style={{ color: '#388e3c', backgroundColor: 'white'}}>Click here to copy my ID!</Button>
+                        <Button variant="contained" className={classes.margin} onClick={() => {copyId()}} style={{ color: '#388e3c', backgroundColor: 'white'}}>ここをクリックして自分のIDをコピー</Button>
+                        <Button variant="contained" className={classes.margin} onClick={() => {copyFriendId()}} style={{ color: '#388e3c', backgroundColor: 'white'}}>ここをクリックしてIDコピー、お試しに友だちを追加</Button>
                         <div id='myId' style={{ width: '0', height: '0', margin: '0', padding: '0', opacity: '0'}}>{state.id}</div>
+                        <div id='FriendId' style={{ width: '0', height: '0', margin: '0', padding: '0', opacity: '0'}}>Lp6SoOTPVcOwVfwB1sd0iu3yoTh1</div>
                     </Toolbar>
                 </AppBar>
             </div>  
